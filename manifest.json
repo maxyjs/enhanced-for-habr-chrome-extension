@@ -1,0 +1,31 @@
+{
+  "name": "Enhanced for Habr Chrome Extension",
+  "description": "Расширение для конспектирования статей на habr.com",
+  "version": "0.10",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": {
+      "128": "icons/128.png"
+    },
+    "default_title": "Enhanced for Habr Chrome Extension"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://m.habr.com/*",
+        "https://habr.com/*"
+      ],
+      "js": [
+        "content_scripts/articleHandler.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "128": "icons/128.png"
+  },
+  "permissions": [
+    "clipboardWrite",
+    "clipboardRead"
+  ]
+}
